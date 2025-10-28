@@ -1,0 +1,75 @@
+? Ahoy Language - VS Code LSP Test File
+? This file uses CORRECT Ahoy syntax for testing LSP features
+
+? ==================== CONSTANTS ====================
+PI :: 3.14159
+MAX_SIZE :: 100
+
+? ==================== SIMPLE FUNCTION ====================
+add :: |a:int, b:int| int:
+    return a plus b
+
+? ==================== ANOTHER FUNCTION ====================
+multiply :: |x:int, y:int| int:
+    return x times y
+
+? ==================== GREET FUNCTION ====================
+greet :: |name:string| string:
+    return "Hello, " plus name
+
+? ==================== VARIABLES ====================
+x: 10
+y: 20
+sum: add|x, y|
+product: multiply|x, y|
+
+? ==================== CONDITIONALS ====================
+if sum greater_than product then
+    print|"Sum is greater"|
+anif product greater_than sum then
+    print|"Product is greater"|
+else
+    print|"They are equal"|
+
+? ==================== LOOPS ====================
+loop:0 to 10 do
+    print|"Iteration"|
+
+? ==================== ARRAYS ====================
+numbers: [1, 2, 3, 4, 5]
+loop num in numbers do
+    print|"Number: %v", num|
+
+? ==================== HOVER TEST ====================
+? Hover over 'add', 'multiply', 'greet' to see function signatures
+? Hover over 'PI', 'MAX_SIZE' to see constants
+? Hover over keywords like 'if', 'loop', 'return'
+
+result: add|5, 10|
+message: greet|"World"|
+
+? ==================== GO TO DEFINITION TEST ====================
+? Ctrl+Click (or F12) on 'add' below to jump to its definition
+final_result: add|100, 200|
+
+? Ctrl+Click on 'multiply' to jump to its definition
+big_product: multiply|50, 75|
+
+? ==================== COMPLETION TEST ====================
+? Type the following and press Ctrl+Space:
+?   - Type "lo" and you should see "loop" suggestion
+?   - Type "if" and you should see "if then" suggestion
+?   - Type "re" and you should see "return" suggestion
+?   - Type "pl" and you should see "plus" suggestion
+
+? ==================== DOCUMENT SYMBOLS TEST ====================
+? Press Ctrl+Shift+O to see an outline of this file
+? You should see: PI, MAX_SIZE, add, multiply, greet, etc.
+
+? ==================== ALL FEATURES TO TEST ====================
+? 1. Diagnostics: Try removing 'end' or adding syntax errors
+? 2. Go to Definition: Ctrl+Click on function names
+? 3. Hover: Hover over keywords and identifiers
+? 4. Completion: Type keywords and press Ctrl+Space
+? 5. Symbols: Press Ctrl+Shift+O for outline
+? 6. Problems: Press Ctrl+Shift+M to see all diagnostics

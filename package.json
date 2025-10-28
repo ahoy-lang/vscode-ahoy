@@ -1,0 +1,74 @@
+{
+	"name": "ahoy-lang",
+	"displayName": "Ahoy Language Support",
+	"description": "Syntax highlighting and language support for Ahoy programming language",
+	"version": "0.1.0",
+	"publisher": "ahoy-lang",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/yourusername/ahoy-lang"
+	},
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.60.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"keywords": [
+		"ahoy",
+		"ahoy-lang",
+		"syntax"
+	],
+	"activationEvents": [
+		"onLanguage:ahoy"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"languages": [
+			{
+				"id": "ahoy",
+				"aliases": [
+					"Ahoy",
+					"ahoy"
+				],
+				"extensions": [
+					".ahoy"
+				],
+				"configuration": "./language-configuration.json",
+				"icon": {
+					"light": "./icons/ahoy-icon.png",
+					"dark": "./icons/ahoy-icon.png"
+				}
+			}
+		],
+		"grammars": [
+			{
+				"language": "ahoy",
+				"scopeName": "source.ahoy",
+				"path": "./syntaxes/ahoy.tmLanguage.json"
+			}
+		],
+		"commands": [
+			{
+				"command": "ahoy.restartLanguageServer",
+				"title": "Restart Ahoy Language Server",
+				"category": "Ahoy"
+			}
+		]
+	},
+	"scripts": {
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"package": "vsce package"
+	},
+	"devDependencies": {
+		"@types/node": "^16.x",
+		"@types/vscode": "^1.60.0",
+		"typescript": "^4.9.0",
+		"vsce": "^2.15.0"
+	},
+	"dependencies": {
+		"vscode-languageclient": "^8.0.0"
+	}
+}

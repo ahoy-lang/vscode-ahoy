@@ -1,0 +1,76 @@
+? ============================================
+? Ahoy Syntax Highlighting Test File
+? ============================================
+
+? Constants
+PI :: 3.14159
+MAX_SIZE :: 100
+DEBUG :: true
+
+? Variables
+count: 0
+name: "Alice"
+score: 95.5
+items: [1, 2, 3, 4, 5]
+data: {"key": "value"}
+
+? Function Definition
+add :: |a:int, b:int| int:
+    result: a plus b
+    return result
+
+multiply :: |x:float, y:float| float:
+    return x times y
+
+greet :: |name:string| string:
+    return "Hello, " plus name
+
+? Control Flow
+if score greater_than 90 then
+    print|"Excellent!"|
+anif score greater_than 80 then
+    print|"Great!"|
+else
+    print|"Keep trying!"|
+
+? Switch Statement
+switch count on
+    1: print|"One"|
+    2: print|"Two"|
+    3: print|"Three"|
+
+? Loops
+loop:0 to 10 do
+    print|"Iteration"|
+
+loop:count less_than 10 do
+    count: count plus 1
+
+loop item in items do
+    print|"Item: %d", item|
+
+? Operators
+a: 10 plus 5
+b: 20 minus 3
+c: 4 times 7
+d: 15 div 3
+e: 17 mod 5
+
+? Comparisons
+flag: a is 15
+check: b greater_than 10
+test: c lesser_equal 30
+
+? Function Calls
+result1: add|10, 20|
+result2: multiply|3.14, 2.0|
+message: greet|"World"|
+
+? Print Statement
+ahoy|"Result: %d", result1|
+print|"Message: %s", message|
+printf|"Debug: %d, %f, %s", count, score, name|
+
+? ============================================
+? All syntax features covered
+? ============================================
