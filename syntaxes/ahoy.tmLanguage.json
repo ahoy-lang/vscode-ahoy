@@ -19,7 +19,7 @@
       "patterns": [
         {
           "name": "comment.line.question.ahoy",
-          "match": "\\?.*$"
+          "match": "\\?(?!\\?).*$"
         }
       ]
     },
@@ -43,7 +43,7 @@
       "patterns": [
         {
           "name": "keyword.control.ahoy",
-          "match": "\\b(if|then|else|anif|elseif|switch|on|loop|do|in|to|break|skip|return|when|import)\\b"
+          "match": "\\b(if|then|else|anif|elseif|switch|on|loop|do|in|to|till|from|halt|next|return|when|import|program)\\b"
         },
         {
           "name": "keyword.other.ahoy",
@@ -101,7 +101,7 @@
       "patterns": [
         {
           "name": "storage.type.primitive.ahoy",
-          "match": "\\b(int|float|string|bool|char|dict|array|Vector2|Color)\\b"
+          "match": "\\b(int|float|string|bool|char|dict|array|vector2|color)\\b"
         }
       ]
     },
@@ -110,6 +110,10 @@
         {
           "name": "keyword.operator.word.ahoy",
           "match": "\\b(plus|minus|times|div|mod|and|or|not|is|lesser|greater|lesser_than|greater_than|less_than|greater_equal|lesser_equal)\\b"
+        },
+        {
+          "name": "keyword.operator.ternary.ahoy",
+          "match": "\\?\\?"
         },
         {
           "name": "keyword.operator.assignment.ahoy",
