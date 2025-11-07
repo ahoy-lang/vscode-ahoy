@@ -1,41 +1,43 @@
-; Keywords - match only standalone keywords, not within identifiers
-"if" @keyword
-"then" @keyword
-"else" @keyword
-"elseif" @keyword
-"loop" @keyword
-"do" @keyword
-"switch" @keyword
-"when" @keyword
-"import" @keyword
-"struct" @keyword
-"enum" @keyword
-"program" @keyword
-"return" @keyword
-"assert" @keyword
-"defer" @keyword
-"infer" @keyword
-"void" @keyword
+; Keywords - ONLY highlight statement-level keywords, not anonymous tokens
+; Anonymous tokens like "do", "in", "to" are part of the syntax structure
+; but should NOT be highlighted separately (they would match in identifiers)
 
-; Statement types - these are their own nodes
-(halt_statement) @keyword.control
-(next_statement) @keyword.control
+[
+  "if"
+  "then"
+  "else"
+  "anif"
+  "loop"
+  "switch"
+  "when"
+  "import"
+  "struct"
+  "enum"
+  "program"
+  "return"
+] @keyword
 
+; Control flow keywords
+; Note: "halt" and "next" are anonymous tokens in the grammar, cannot be highlighted
 
+; Function calls
 
-; Function declarations
+(call_expression
+  function: (identifier) @function)
+
+; Function definitions
+
 (function_declaration
   name: (identifier) @function)
 
-; Function calls
-(call_expression
-  function: (identifier) @function.call)
-
 ; Built-in functions
-((identifier) @function.builtin
+
+(call_expression
+  function: (identifier) @function.builtin
   (#match? @function.builtin "^(ahoy|ahoyf|print|printf|sprintf|sahoyf)$"))
 
 ; Types
+
 (type) @type
 
 [
@@ -43,15 +45,15 @@
   "float"
   "string"
   "bool"
-  "char"
   "dict"
-  "array"
   "vector2"
   "color"
-  "void"
 ] @type.builtin
 
 ; Variables
+
+(identifier) @variable
+
 (parameter
   name: (identifier) @variable.parameter)
 
@@ -64,22 +66,19 @@
 (struct_declaration
   name: (identifier) @type)
 
-(struct_field
+(struct_field_oneline
+  name: (identifier) @property)
+
+(struct_field_multiline
   name: (identifier) @property)
 
 (enum_declaration
   name: (identifier) @type)
 
-(enum_member
-  name: (identifier) @constant)
-
-(field_assignment
-  field: (identifier) @property)
-
-(property_access
-  property: (identifier) @property)
+(type) @type
 
 ; Operators
+
 [
   "plus"
   "minus"
@@ -105,10 +104,10 @@
 ] @operator
 
 ; Punctuation
+
 [
   ":"
-  "::"
-  ":="
+  ";"
   ","
   "|"
 ] @punctuation.delimiter
@@ -120,25 +119,26 @@
   "}"
   "["
   "]"
+  "<"
+  ">"
 ] @punctuation.bracket
 
 ; Literals
+
 (string) @string
-(fstring) @string.special
-(char) @character
+(char) @string.special
 (number) @number
-(boolean) @boolean
+(boolean) @constant.builtin
 
 ; Typed object literals
 (typed_object_literal
   type_name: (identifier) @type)
 
 ; Comments
+
 (comment) @comment
 
 ; Imports
+
 (import_statement
   path: (string) @string.special)
-
-; Generic identifiers (fallback)
-(identifier) @variable
