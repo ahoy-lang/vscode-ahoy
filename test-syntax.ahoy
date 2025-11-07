@@ -6,48 +6,78 @@
 PI :: 3.14159
 MAX_SIZE :: 100
 DEBUG :: true
+DEBUG ::string= "kjlkj"
+
 
 ? Variables
 count: 0
-name: "Alice"
+name:string= "Alice"
 score: 95.5
 items: [1, 2, 3, 4, 5]
 data: {"key": "value"}
 
+? struct
+
+
+enum test:
+	ONE
+	TWO
+	THREE
+
+struct particles:
+	id: int
+	mass: float
+	charge: float
+	type smoke_particles:
+		description: string
+		active: bool
+	type wind_particles:
+		size: string
+		active: bool
+
+
+
 ? Function Definition
-add :: |a:int, b:int| int:
-    result: a plus b
-    return result
+add :: |a:int,j:string, b:int=10,ck:int=39| int:
+  result: a plus b
+  return result
+
+add|10,10,10,29|
+greet :: |name:string| int:
+  return ahoy|f"Hello, {name}"|
 
 multiply :: |x:float, y:float| float:
     return x times y
 
-greet :: |name:string| string:
-    return "Hello, " plus name
 
 ? Control Flow
 if score greater_than 90 then
-    print|"Excellent!"|
-anif score greater_than 80 then
-    print|"Great!"|
-else
-    print|"Keep trying!"|
+	print|"Excellent!"|
+anif score greater_than 80 then print|"Great!"|
+else print|"Keep trying!"|
 
 ? Switch Statement
+
 switch count on
-    1: print|"One"|
-    2: print|"Two"|
-    3: print|"Three"|
+  1: print|"One"|
+  2: print|"Two"|
+  3: print|"Three"|
+	_:""
 
 ? Loops
-loop:0 to 10 do
-    print|"Iteration"|
+loop from 0 to 10 do
+  print|"Iteration"|
+  if i is 10 then halt
 
-loop:count less_than 10 do
+loop count till count less_than 10 do
     count: count plus 1
+    print|f"count {count}"|
+
 
 loop item in items do
-    print|"Item: %d", item|
+	print|"ljdsalkfjlkjdasf"|
+	ahoy|"Processing item: %d", item|
+  print|"Item: %d", item|
 
 ? Operators
 a: 10 plus 5
@@ -59,7 +89,7 @@ e: 17 mod 5
 ? Comparisons
 flag: a is 15
 check: b greater_than 10
-test: c lesser_equal 30
+test: c less_than 30
 
 ? Function Calls
 result1: add|10, 20|
@@ -68,8 +98,9 @@ message: greet|"World"|
 
 ? Print Statement
 ahoy|"Result: %d", result1|
-print|"Message: %s", message|
-printf|"Debug: %d, %f, %s", count, score, name|
+ahoy|"Message: %s", message|
+ahoy|f"Debug: %d, %f, %s", count, score, name|
+print |f "time is {result1}"
 
 ? ============================================
 ? All syntax features covered

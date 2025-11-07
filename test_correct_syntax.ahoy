@@ -6,7 +6,7 @@ PI :: 3.14159
 MAX_SIZE :: 100
 
 ? ==================== SIMPLE FUNCTION ====================
-add :: |a:int, b:int| int:
+add :: |a:int, b:int|:
     return a plus b
 
 ? ==================== ANOTHER FUNCTION ====================
@@ -15,7 +15,8 @@ multiply :: |x:int, y:int| int:
 
 ? ==================== GREET FUNCTION ====================
 greet :: |name:string| string:
-    return "Hello, " plus name
+    return "Hello, "
+    return nume
 
 ? ==================== VARIABLES ====================
 x: 10

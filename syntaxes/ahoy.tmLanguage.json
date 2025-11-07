@@ -7,6 +7,8 @@
     { "include": "#constants" },
     { "include": "#keywords" },
     { "include": "#functions" },
+    { "include": "#enum-declarations" },
+    { "include": "#typed-objects" },
     { "include": "#types" },
     { "include": "#operators" },
     { "include": "#strings" },
@@ -43,7 +45,7 @@
       "patterns": [
         {
           "name": "keyword.control.ahoy",
-          "match": "\\b(if|then|else|anif|elseif|switch|on|loop|do|in|to|till|from|halt|next|return|when|import|program)\\b"
+          "match": "\\b(if|then|else|anif|elseif|switch|on|loop|do|in|to|till|halt|next|return|when|import|program)\\b"
         },
         {
           "name": "keyword.other.ahoy",
@@ -97,11 +99,52 @@
         }
       ]
     },
+    "enum-declarations": {
+      "patterns": [
+        {
+          "name": "meta.enum.ahoy",
+          "begin": "\\b(enum)\\s+([a-z_][a-zA-Z0-9_]*)\\s*(:)",
+          "beginCaptures": {
+            "1": { "name": "storage.type.ahoy" },
+            "2": { "name": "entity.name.type.enum.ahoy" },
+            "3": { "name": "punctuation.separator.ahoy" }
+          },
+          "end": "^(?!\\s)",
+          "patterns": [
+            {
+              "match": "^\\s*(\\d+)\\s+([A-Z_][A-Z0-9_]*)",
+              "captures": {
+                "1": { "name": "constant.numeric.integer.ahoy" },
+                "2": { "name": "constant.other.enum.ahoy" }
+              }
+            },
+            {
+              "match": "^\\s*([A-Z_][A-Z0-9_]*)",
+              "captures": {
+                "1": { "name": "constant.other.enum.ahoy" }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "typed-objects": {
+      "patterns": [
+        {
+          "name": "meta.typed-object.ahoy",
+          "match": "\\b([a-z_][a-zA-Z0-9_]*)\\s*(<)",
+          "captures": {
+            "1": { "name": "entity.name.type.ahoy" },
+            "2": { "name": "punctuation.definition.typeparameters.begin.ahoy" }
+          }
+        }
+      ]
+    },
     "types": {
       "patterns": [
         {
           "name": "storage.type.primitive.ahoy",
-          "match": "\\b(int|float|string|bool|char|dict|array|vector2|color)\\b"
+          "match": "\\b(int|float|string|bool|char|dict|array|vector2|color|rectangle)\\b"
         }
       ]
     },

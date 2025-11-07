@@ -1,0 +1,20 @@
+? Test file for new VSCode extension features
+
+program test_app
+
+? Test new keywords: halt, next, till, program
+loop i:0 till i > 10 do
+    if i is 5 then
+        halt
+    
+    if i is 3 then
+        next
+    
+    print|i|
+
+? Test ternary operator
+result: i > 5 ?? "big" : "small"
+
+? Test updated types
+pos: vector2
+clr: color
