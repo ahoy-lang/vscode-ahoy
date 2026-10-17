@@ -53,7 +53,7 @@
         },
         {
           "name": "storage.type.ahoy",
-          "match": "\\b(func|enum|struct|type)\\b"
+          "match": "\\b(func|enum|struct|type|alias|union)\\b"
         }
       ]
     },
@@ -207,11 +207,11 @@
       "patterns": [
         {
           "name": "constant.numeric.float.ahoy",
-          "match": "\\b\\d+\\.\\d+\\b"
+          "match": "(?<!\\w)\\d+(_\\d+)*\\.\\d+(_\\d+)*(?!\\w)"
         },
         {
           "name": "constant.numeric.integer.ahoy",
-          "match": "\\b\\d+\\b"
+          "match": "(?<!\\w)\\d+(_\\d+)*(?!\\w)"
         }
       ]
     },
