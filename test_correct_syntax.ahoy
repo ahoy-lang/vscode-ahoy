@@ -7,11 +7,11 @@ MAX_SIZE :: 100
 
 ? ==================== SIMPLE FUNCTION ====================
 add :: |a:int, b:int|:
-    return a plus b
+    return a + b
 
 ? ==================== ANOTHER FUNCTION ====================
 multiply :: |x:int, y:int| int:
-    return x times y
+    return x * y
 
 ? ==================== GREET FUNCTION ====================
 greet :: |name:string| string:
@@ -25,9 +25,9 @@ sum: add|x, y|
 product: multiply|x, y|
 
 ? ==================== CONDITIONALS ====================
-if sum greater_than product then
+if sum > product then
     print|"Sum is greater"|
-anif product greater_than sum then
+elif product > sum then
     print|"Product is greater"|
 else
     print|"They are equal"|
@@ -61,7 +61,7 @@ big_product: multiply|50, 75|
 ?   - Type "lo" and you should see "loop" suggestion
 ?   - Type "if" and you should see "if then" suggestion
 ?   - Type "re" and you should see "return" suggestion
-?   - Type "pl" and you should see "plus" suggestion
+?   - Type "gu" and you should see "guard" suggestion
 
 ? ==================== DOCUMENT SYMBOLS TEST ====================
 ? Press Ctrl+Shift+O to see an outline of this file

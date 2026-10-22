@@ -58,7 +58,8 @@ print(result)
 1. **Check binary exists:**
    ```bash
    which ahoy-lsp
-   # Should output: /usr/local/bin/ahoy-lsp
+   readlink -f "$(which ahoy-lsp)"
+   ahoy-lsp --version
    ```
 
 2. **Check VS Code output:**

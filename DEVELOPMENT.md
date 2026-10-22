@@ -35,7 +35,7 @@ The extension provides comprehensive syntax highlighting for:
 - **Variables**: `count: 0`
 - **Functions**: `add :: |a:int, b:int| int:`
 - **Keywords**: `if`, `then`, `else`, `loop`, `return`
-- **Operators**: `plus`, `minus`, `times`, `is`, `greater_than`
+- **Operators**: `+`, `-`, `*`, `/`, `is`, `<`, `>`
 - **Types**: `int`, `float`, `string`, `bool`
 - **Strings**: `"Hello, World!"`
 - **Numbers**: `42`, `3.14`
@@ -111,7 +111,7 @@ Key scopes:
 - `entity.name.function.ahoy` - Function names
 - `constant.other.ahoy` - Constants
 - `storage.type.ahoy` - Type names
-- `keyword.operator.word.ahoy` - Word operators (plus, minus, etc.)
+- `keyword.operator.word.ahoy` - Word logic operators (`and`, `or`, `not`, `is`)
 
 ## LSP Support (Coming Soon)
 

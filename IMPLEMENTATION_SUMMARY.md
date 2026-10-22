@@ -105,25 +105,19 @@ int, float, string, bool, char, dict, array, Vector2, Color
 
 #### Operators
 
-**Word Operators:**
-```ahoy
-plus, minus, times, div, mod
-and, or, not
-is, lesser, greater
-lesser_than, greater_than
-less_than, greater_equal, lesser_equal
-```
-- Scope: `keyword.operator.word.ahoy`
-
 **Symbol Operators:**
 ```ahoy
 : (assignment)
 :: (constant/function definition)
-+, -, *, /, % (arithmetic)
-==, !=, <, >, <=, >= (comparison)
-&&, ||, ! (logical)
++, -, *, /, %, ** (arithmetic)
+is (equality)
+<, >, <=, >= (comparison)
+and, or, not (logical)
 ```
 - Scopes: Various `keyword.operator.*` scopes
+
+The old word operators (`plus`, `minus`, `times`, `div`, `mod`,
+`greater_than`, `less_than`, ...) were removed.
 
 #### Strings and Characters
 ```ahoy
@@ -266,10 +260,10 @@ The extension is ready for:
 ```ahoy
 ? Calculate factorial
 factorial :: |n:int| int:
-    if n lesser_equal 1 then
+    if n <= 1 then
         return 1
     else
-        return n times factorial|n minus 1|
+        return n * factorial|n - 1|
 
 result: factorial|5|
 ahoy|"Result: %d", result|
@@ -280,7 +274,7 @@ All elements highlighted correctly:
 - `factorial` as function name
 - `n:int` parameters with types
 - `if`, `then`, `else`, `return` as keywords
-- `lesser_equal`, `times` as operators
+- `<=`, `*` as operators
 - Numbers and strings properly colored
 
 ### Example 2: Constants and Variables

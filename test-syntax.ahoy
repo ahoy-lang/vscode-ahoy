@@ -49,7 +49,7 @@ $
 
 ? Function Definition
 add :: |a:int,j:int, b:int=10,ck:int=39| int:
-  result: a plus b
+  result: a + b
   return result
 
 myint : add|10,10,10,29|
@@ -59,14 +59,14 @@ greet :: |name:string| int:
 $
 
 multiply :: |x:float, y:float| float:
-    return x times y
+    return x * y
 $
 
 
 ? Control Flow
-if score greater_than 90 then
+if score > 90 then
 	print|"Excellent!"|
-anif score greater_than 80 then print|"Great!"|
+elif score > 80 then print|"Great!"|
 else print|"Keep trying!"|
 $
 
@@ -85,8 +85,8 @@ loop from 0 to 10 do
   if i is 10 then halt
 $
 
-loop count till count less_than 10 do
-    count: count plus 1
+loop count until count < 10 do
+    count: count + 1
     print|f"count {count}"|
 $
 
@@ -98,16 +98,16 @@ loop item in items do
 $
 
 ? Operators
-a: 10 plus 5
-b: 20 minus 3
-c: 4 times 7
-d: 15 div 3
-e: 17 mod 5
+a: 10 + 5
+b: 20 - 3
+c: 4 * 7
+d: 15 / 3
+e: 17 % 5
 
 ? Comparisons
 flag: a is 15
-check: b greater_than 10
-test: c less_than 30
+check: b > 10
+test: c < 30
 
 ? Function Calls
 result1: add|10, 20|

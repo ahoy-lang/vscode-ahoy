@@ -32,7 +32,7 @@ code --install-extension ahoy-lang-0.1.0.vsix
 | Function | `add :: \|a:int\|` | `entity.name.function.ahoy` |
 | Keyword | `if`, `loop`, `return` | `keyword.control.ahoy` |
 | Type | `int`, `string`, `float` | `storage.type.primitive.ahoy` |
-| Operator | `plus`, `minus`, `times` | `keyword.operator.word.ahoy` |
+| Operator | `+`, `-`, `*`, `is`, `<` | `keyword.operator.ahoy` |
 | String | `"Hello"` | `string.quoted.double.ahoy` |
 | Number | `42`, `3.14` | `constant.numeric.*` |
 | Variable | `count: 0` | `variable.other.ahoy` |
@@ -139,7 +139,7 @@ Expected highlighting:
 - `PI` - bright (constant)
 - `add` - distinct (function)
 - `a:int`, `b:int` - typed parameters
-- `return`, `plus` - keywords/operators
+- `return`, `+` - keywords/operators
 - `10`, `20` - numbers
 - `"Result: %d"` - string
 

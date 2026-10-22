@@ -120,15 +120,14 @@ loop:0 to 10 do
 
 **Solution:**
 ```bash
-# Verify binary exists
+# Verify binary exists and where it resolves
 which ahoy-lsp
+readlink -f "$(which ahoy-lsp)"
+ahoy-lsp --version
 
-# Should output: /usr/local/bin/ahoy-lsp
-
-# If not found, reinstall
-cd ../ahoy/lsp
-./build.sh
-./install.sh
+# If not found, reinstall as a symlink
+cd ../ahoy-lsp
+make install
 ```
 
 ### Issue: "Diagnostics work but nothing else"
@@ -232,6 +231,6 @@ The most common "not working" issue is using wrong syntax. Ahoy uses:
 - `:` for variables (not `=` or `local`)
 - `then` after conditionals
 - `do` after loops
-- `plus`, `minus`, `times` operators (or `+`, `-`, `*`)
+- `+`, `-`, `*`, `/`, `%`, `**` operators (the word forms were removed)
 
 Use `test_correct_syntax.ahoy` as your reference!

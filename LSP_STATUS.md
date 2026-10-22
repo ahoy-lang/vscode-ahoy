@@ -59,7 +59,7 @@ If these work → **LSP is fully functional!** ✅
 | Function | `name :: \|params\| type:` | `add :: \|a:int, b:int\| int:` |
 | Variable | `name: value` | `x: 10` |
 | Constant | `NAME :: value` | `PI :: 3.14159` |
-| If | `if condition then` | `if x greater_than 5 then` |
+| If | `if condition then` | `if x > 5 then` |
 | Loop | `loop:range do` | `loop:0 to 10 do` |
 | Array | `[items]` | `numbers: [1, 2, 3]` |
 | Object | `<key: value>` | `point: <x: 10, y: 20>` |
@@ -68,10 +68,10 @@ If these work → **LSP is fully functional!** ✅
 
 ## Operators
 
-Word form: `plus`, `minus`, `times`, `div`, `is`, `greater_than`, `less_than`, etc.
-Symbol form: `+`, `-`, `*`, `/`, `==`, `>`, `<`, etc.
+Symbols: `+`, `-`, `*`, `/`, `%`, `**`, `<`, `>`, `<=`, `>=`, `is`, `and`, `or`, `not`.
 
-Both work!
+The old word operators (`plus`, `minus`, `times`, `div`, `mod`,
+`greater_than`, `less_than`, ...) were removed.
 
 ## How to Test
 

@@ -10,8 +10,8 @@ All notable changes to the "ahoy-lang" extension will be documented in this file
   - Keywords (if, then, else, loop, return, etc.)
   - Constants with :: operator
   - Functions with :: and | syntax
-  - Operators (plus, minus, times, div, etc.)
-  - Word operators (is, greater_than, less_than, etc.)
+  - Symbol operators (+, -, *, /, %, **)
+  - Word logic (is, and, or, not)
   - Comments with ? prefix
   - Strings, characters, and numbers
   - Types (int, float, string, bool, etc.)

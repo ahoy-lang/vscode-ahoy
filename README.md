@@ -6,10 +6,10 @@ Complete language support for the Ahoy programming language, including syntax hi
 
 ### ✅ Syntax Highlighting
 Full syntax highlighting for all Ahoy language features:
-- Keywords: `if`, `then`, `else`, `anif`, `loop`, `do`, `return`, `function`, `local`, `end`, etc.
+- Keywords: `if`, `then`, `else`, `elif`, `guard`, `loop`, `do`, `return`, `struct`, `enum`, etc.
 - Functions and variables
 - Operators: `+`, `-`, `*`, `/`, `==`, `>`, `<`, etc.
-- Word operators: `plus`, `minus`, `times`, `div`, `is`, `greater_than`, `and`, `or`, etc.
+- Word logic: `is`, `and`, `or`, `not` (arithmetic/comparison word operators were removed)
 - Comments: `--` and `? comment style`
 - Strings and numbers
 - Tables and arrays
@@ -34,14 +34,14 @@ Intelligent code assistance powered by the Ahoy Language Server:
 
 The Language Server requires the `ahoy-lsp` binary to be installed. See [LSP_SETUP.md](./LSP_SETUP.md) for detailed installation instructions.
 
-Quick install:
+Quick install (symlink, never a copy):
 ```bash
-cd ../ahoy/lsp
-./build.sh
-./install.sh
+cd ../ahoy-lsp
+make install
 ```
 
-This installs `ahoy-lsp` to `/usr/local/bin/`.
+This installs `~/.local/bin/ahoy-lsp` as a symlink to the repository binary,
+so later builds update the same command automatically.
 
 ### Installing the Extension
 
@@ -231,15 +231,16 @@ npm run package
 
 ### Updating the LSP Server
 
-After changes to `../ahoy/lsp`:
+After changes to `../ahoy-lsp`:
 
 ```bash
-cd ../ahoy/lsp
-go build -o ahoy-lsp .
-sudo cp ahoy-lsp /usr/local/bin/
+cd ../ahoy-lsp
+make install
+ahoy-lsp --version
 ```
 
-Restart VS Code extension host to pick up the new binary.
+The installed command is a symlink, so rebuilding updates it automatically.
+Restart the VS Code extension host to pick up the new binary process.
 
 ## Known Limitations
 

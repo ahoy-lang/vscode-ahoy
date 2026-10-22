@@ -98,7 +98,7 @@ After installation, verify it works:
    - `PI` in a distinct color (constant)
    - `greet` as a function name
    - Keywords (`return`) highlighted
-   - Operators (`plus`) highlighted
+   - Operators (`+`, `*`) highlighted
 
 ## Uninstall
 
@@ -165,9 +165,12 @@ vsce publish
 - Storage: `func`, `enum`, `struct`, `type`
 
 ### Operators
-- Word operators: `plus`, `minus`, `times`, `div`, `mod`, `and`, `or`, `not`
-- Comparisons: `is`, `greater_than`, `less_than`, `lesser_equal`
-- Symbols: `::`, `:`, `+`, `-`, `*`, `/`
+- Word logic: `is`, `and`, `or`, `not`
+- Comparisons: `<`, `>`, `<=`, `>=`, `is`
+- Symbols: `::`, `:`, `+`, `-`, `*`, `/`, `%`, `**`
+
+The old word operators (`plus`, `minus`, `times`, `div`, `mod`,
+`greater_than`, `less_than`, ...) were removed.
 
 ### Types
 `int`, `float`, `string`, `bool`, `char`, `dict`, `array`, `Vector2`, `Color`

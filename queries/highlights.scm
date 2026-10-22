@@ -6,6 +6,9 @@
   "if"
   "then"
   "else"
+  "elif"
+  "pass"
+  "guard"
   "anif"
   "loop"
   "switch"
@@ -80,13 +83,6 @@
 ; Operators
 
 [
-  "plus"
-  "minus"
-  "times"
-  "div"
-  "mod"
-  "greater_than"
-  "less_than"
   "is"
   "and"
   "or"

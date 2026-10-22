@@ -10,15 +10,17 @@ The `ahoy-lsp` binary must be installed and available in your PATH. You can veri
 which ahoy-lsp
 ```
 
-If it's not installed, build and install it from the `ahoy/lsp` directory:
+If it's not installed, build and install it from the `ahoy-lsp` directory:
 
 ```bash
-cd ../ahoy/lsp
-./build.sh
-./install.sh
+cd ../ahoy-lsp
+make install
 ```
 
-This will install `ahoy-lsp` to `/usr/local/bin/ahoy-lsp`.
+This creates `~/.local/bin/ahoy-lsp` as a symlink to the repository binary.
+Do not copy the binary: a copy goes stale on the next build. Later builds
+update the installed command automatically; restart the VS Code extension host
+to load a new server process.
 
 ## Features
 
@@ -134,7 +136,8 @@ If the language server doesn't start:
 2. **Verify ahoy-lsp is in PATH**:
    ```bash
    which ahoy-lsp
-   # Should output: /usr/local/bin/ahoy-lsp
+   readlink -f "$(which ahoy-lsp)"
+   ahoy-lsp --version
    ```
 
 3. **Test the binary manually**:
@@ -212,12 +215,14 @@ Restart VS Code to load the new version.
 After making changes to the Go LSP server:
 
 ```bash
-cd ../ahoy/lsp
-go build -o ahoy-lsp .
-sudo cp ahoy-lsp /usr/local/bin/
+cd ../ahoy-lsp
+make install
+ahoy-lsp --version
 ```
 
-Restart the VS Code extension host to pick up the new binary.
+The installed command is a symlink, so `make install` (or a plain
+`go build -o ahoy-lsp .`) updates what it resolves to. Restart the VS Code
+extension host to pick up the new binary process.
 
 ### Debugging the Extension
 

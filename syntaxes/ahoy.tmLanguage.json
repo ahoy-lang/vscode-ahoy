@@ -45,7 +45,7 @@
       "patterns": [
         {
           "name": "keyword.control.ahoy",
-          "match": "\\b(if|then|else|anif|elseif|switch|on|loop|do|in|to|till|halt|next|return|when|import|program)\\b"
+          "match": "\\b(if|guard|then|else|elif|pass|anif|elseif|switch|on|loop|do|in|to|till|halt|next|return|when|import|program)\\b"
         },
         {
           "name": "keyword.other.ahoy",
@@ -152,7 +152,7 @@
       "patterns": [
         {
           "name": "keyword.operator.word.ahoy",
-          "match": "\\b(plus|minus|times|div|mod|and|or|not|is|lesser|greater|lesser_than|greater_than|less_than|greater_equal|lesser_equal)\\b"
+          "match": "\\b(and|or|not|is)\\b"
         },
         {
           "name": "keyword.operator.ternary.ahoy",

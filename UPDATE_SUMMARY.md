@@ -101,8 +101,8 @@ If the LSP stops working, use the command palette:
 ## Grammar Reference
 
 Based on the latest tree-sitter-ahoy grammar (commit 98fea05):
-- Control flow: `if`, `then`, `else`, `anif`, `switch`, `on`, `loop`, `do`, `halt`, `next`
+- Control flow: `if`, `then`, `else`, `elif`, `guard`, `switch`, `on`, `loop`, `do`, `halt`, `next`
 - Loop keywords: `in`, `to`, `till`, `from`
 - Declarations: `program`, `import`, `struct`, `enum`, `type`
-- Operators: `plus`, `minus`, `times`, `div`, `mod`, `and`, `or`, `not`, `is`
+- Operators: `+`, `-`, `*`, `/`, `%`, `**`, `<`, `>`, `<=`, `>=`, `and`, `or`, `not`, `is`
 - Types: `int`, `float`, `string`, `bool`, `char`, `dict`, `array`, `vector2`, `color`
