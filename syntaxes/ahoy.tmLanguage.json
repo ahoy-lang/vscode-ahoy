@@ -152,7 +152,7 @@
       "patterns": [
         {
           "name": "keyword.operator.word.ahoy",
-          "match": "\\b(and|or|not|is)\\b"
+          "match": "\\b(and|or|not|is|bor|bxor|band|shl|shr|bnot)\\b"
         },
         {
           "name": "keyword.operator.ternary.ahoy",
@@ -160,7 +160,7 @@
         },
         {
           "name": "keyword.operator.assignment.ahoy",
-          "match": ":(?!=)"
+          "match": "(:=|:(?!=))"
         },
         {
           "name": "keyword.operator.comparison.ahoy",
@@ -168,7 +168,7 @@
         },
         {
           "name": "keyword.operator.arithmetic.ahoy",
-          "match": "(\\+|\\-|\\*|\\/|%)"
+          "match": "(\\*\\*|\\+|\\-|\\*|\\/|%)"
         },
         {
           "name": "keyword.operator.logical.ahoy",
